@@ -1,0 +1,18 @@
+npm i -g typescript
+tsc index.ts
+node index.js
+
+setting up config file:
+tsc --init
+
+in config file:
+rootDir & outDir allows us to specify wihch folder compiler should look in for any source typescript files we want to compile then which folder to output the compile js code into
+tsc --watch
+node --watch filePath
+
+interview questions
+no int or float or numbers, just number
+interface can be reopend but not type
+getters need to have a return value and setters shouldnt, not even void
+
+we can also define all custom data types in a file and use them
