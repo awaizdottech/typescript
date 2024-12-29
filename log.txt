@@ -7,6 +7,7 @@ tsc --init
 
 in config file:
 rootDir & outDir allows us to specify wihch folder compiler should look in for any source typescript files we want to compile then which folder to output the compile js code into
+then tsc -b
 tsc --watch
 node --watch filePath
 
@@ -16,3 +17,6 @@ interface can be reopend but not type
 getters need to have a return value and setters shouldnt, not even void
 
 we can also define all custom data types in a file and use them
+
+npm i @types/node
+npm i express @types/express

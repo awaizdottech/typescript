@@ -8,25 +8,27 @@ let intentional: null;
 let unIntentional: undefined;
 let date: Date;
 let wtf: "wtf"; //not a data type but can be useful
-let anything: "what" | "why" | "when"; //can be useful if you want to restrict the values to only the mentioned ones
+let anything: "what" | "why" | "when"; // can be useful if you want to restrict the values to only the mentioned ones
 let anyType: any; //it can be used at all places where we define data type
 let strArr: string[] = []; //leaving array empty makes it of never type
 let numArr: Array<number> = [];
 let things = [1, true, "hello"]; //has a union data type by type inference, hower over 'things' to observe
-let nestedArr: number[][] = [];
 let someID: number | string; //declarative union type
+let nestedArr: number[][] = [];
 let obj: { name: string; books: number; age: number; penName: string } = {
   name: "string",
   books: 0,
   age: 1,
   penName: "string",
 };
+
 //weird behavior regarding objects
 function myName(params: Author) {}
 myName(obj); //this shoudnt be allowed
 
 let tuple: [number, boolean, string]; //tuples allow diff types of elements in a specific order and an array of certain length but it is corrupted as we can push extra elements
 let namedTuple: [age: number, wtf: boolean, str: string];
+
 interface Author {
   name: string; // state.user.push(todo);
   books: number;
@@ -40,11 +42,16 @@ interface Post {
   pf(): string; //another way we can write the same function decalration
 }
 interface Writer extends Author, Post {} //multiple interfaces can also be extended
+interface complex {
+  [key: string]: number;
+}
+
 type rgb = [number, string]; //alias, another custom data type creator
 type user = { readonly name: string; score?: number }; //score becomes optional with ?, and the readonly is a pure ts feature which means even if its violated js code will work fine
 type superUser = user & { gender: string };
 type Id = number | string;
 // the key distinction btw type and interface is that a type cannot be re-opened to add new properties vs an interface which is always extendable.
+
 enum Time {
   morning,
   afternoon = 10,
