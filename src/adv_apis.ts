@@ -18,9 +18,10 @@ interface complex2 {
   [key: number]: number;
   yo: string;
 }
-const complexObj: complex2 = { 1: 1, yo: "yo" };
+const complexObj: complex2 = { 1: 1, 2: 2, yo: "yo" };
 
 type cleaner = Record<string, number>;
+const nice: cleaner = { 2: 2, yo: 5 };
 
 const userMap = new Map<string, userProfileOptional>();
 userMap.set("1", { email: "hello", password: "hi" });

@@ -1,9 +1,10 @@
-npm i -g typescript
+npm i -d typescript
+# using require ignores the type checking
 tsc index.ts
 node index.js
 
 setting up config file:
-tsc --init
+npx tsc --init
 
 in config file:
 rootDir & outDir allows us to specify wihch folder compiler should look in for any source typescript files we want to compile then which folder to output the compile js code into
@@ -18,5 +19,17 @@ getters need to have a return value and setters shouldnt, not even void
 
 we can also define all custom data types in a file and use them
 
+.d.ts are declaration files present in node_modules/@types folder that are used to provide type information for any third party library that we are using in our project
+// @ts-ignore - comment before a line with type errors to ignore them
+
 npm i @types/node
-npm i express @types/express
+npm i -D @types/express
+
+# whenever u publish a package written in ts u publish the js files and the declaration files only not the ts files
+
+scripts in package.json for ts
+build: tsc -b
+start: node dist/index.js
+dev: npm run build && npm run start
+
+nodemon behaves differently with ts files, so we need to install ts-node
